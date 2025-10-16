@@ -238,22 +238,6 @@ Below are **low-fidelity text-based wireframes** representing the structure and 
 
 ---
 
-## 👩‍💻 Contributors
-
-| Name | Role |
-|------|------|
-| [LARISA GHERMAN](https://github.com/larisagherman) | Original web app creator |
-| [You] | Mobile app developer & designer |
-
----
-
-## 📝 License
-
-This project is distributed under the **MIT License**.  
-See the [LICENSE](LICENSE) file for more information.
-
----
-
 ### 📸 Wireframe Reference
 
 The wireframe below visually represents the mobile app layout:
