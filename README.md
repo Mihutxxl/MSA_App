@@ -1,249 +1,106 @@
-# 🏎️ F1 Schedule Predictions — Mobile App
+# 🚗 ParkShare — Smart Parking Spot Exchange App
 
-This repository contains the **mobile version** of the [F1 Schedule Predictions](https://github.com/larisagherman/f1_schedule_predictions) web application.  
-The mobile app allows Formula 1 fans to view race schedules, make race predictions, and compete on a global leaderboard — directly from their mobile devices.
-
----
-
-## 📱 Overview
-
-The original project was built as a web app using **React** and **Firebase**.  
-This mobile app is a cross-platform version built using **React Native (Expo)**, allowing deployment on both **iOS** and **Android**.
-
-All core functionalities from the web app are retained, with UI and navigation optimized for mobile interaction.
+ParkShare is a community-based mobile application that helps users find and share parking spaces in real time.  
+Users can announce when they are leaving a spot, and others nearby can claim it — making urban parking simpler and more efficient.
 
 ---
 
-## ⚙️ Architecture
+## 📱 Features
 
-| Component | Description |
-|------------|-------------|
-| **Frontend** | React Native (Expo) — manages navigation, UI rendering, and Firebase integration |
-| **Backend** | Firebase (Authentication, Firestore Database, Hosting, and Functions) |
-| **Navigation** | React Navigation (Stack + Tab Navigation) |
-| **Authentication** | Google Sign-In and Email/Password Auth |
-| **Data Sync** | Firebase Realtime Database / Firestore |
-| **Push Notifications** | (Optional) Expo Notifications for race reminders and results |
+### 👤 User Profiles
+- Sign up or log in securely.
+- Store personal car details:
+  - License plate number
+  - Make & model
+  - Color
+  - Size (Compact / Sedan / SUV / Truck)
+
+### 🗺️ Interactive Map
+- See nearby available parking spots using map pins.
+- Tap on a pin to view detailed information.
+- Announce when you’re leaving a spot or claim an available one.
+- Real-time updates on availability.
+
+### 🚙 Parking Spot Details
+- Location and distance from user.
+- Car information of the leaver for identification.
+- Estimated leave time.
+- Compatibility check based on car size.
+
+### 🔔 Notifications
+- Get alerts when:
+  - Someone claims your listed spot.
+  - A nearby spot becomes available.
+  - Your reserved spot is ready.
+
+### 🧾 History & Activity
+- View your shared and claimed parking spots.
+- Track time, location, and status (active, claimed, or expired).
+
+### ⚙️ Settings
+- Manage account information.
+- Edit car details.
+- Enable/disable notifications.
+- Log out.
 
 ---
 
-## 🧩 Key Features
-
-- **View upcoming races** with details (name, date, location, and status)
-- **Submit race predictions** before the race starts
-- **View prediction history** (compare your predictions with actual results)
-- **Leaderboard** — track your score and see top users
-- **Profile & Settings** — manage account info, sign out, and access app info
-- **Admin Controls** (for admin users only):
-  - Add, edit, and delete races
-  - Open/close prediction windows
-
----
-
-## 🧭 Navigation Flow
+## 🧭 App Flow (Wireframe Summary)
 
 ```
-Splash → Login / Sign Up → Home
-         ↓
-   (Tabs: Schedule | History | Leaderboard | Profile)
-         ↓
-  Race Details → Prediction Form
-         ↓
-     Submit / View Results
-```
-
----
-
-## 🧱 Screens & Wireframes
-
-Below are **low-fidelity text-based wireframes** representing the structure and layout of each screen.
-
-![Mobile Wireframe Preview](A_wireframe_design_of_a_mobile_application_titled_.png)
-
----
-
-### 🏁 1. Splash / Launch Screen
-```
----------------------------------
-| [Logo / App Name]             |
-| "F1 Predictions"              |
-| Loading indicator...           |
----------------------------------
+Welcome → Sign Up / Log In → Home (Map)
+      ↳ Announce Leaving Spot
+      ↳ Claim Parking Spot
+      ↳ Notifications
+      ↳ Profile
+      ↳ My Activity
 ```
 
 ---
 
-### 🔐 2. Login / Sign Up
-```
----------------------------------
-| [App Logo]                    |
-| Welcome to F1 Predictions!    |
----------------------------------
-| [ Sign in with Google ]       |
-| [ Sign in with Email ]        |
-| [ Create an Account ]         |
----------------------------------
-| "By signing in, you agree to our Terms." |
----------------------------------
-```
+## 🗺️ Wireframe Preview
+
+![ParkShare Wireframe](A_wireframe_of_a_mobile_application_named_"ParkSha.png)
+
+The wireframe illustrates the primary navigation between core screens:
+- Welcome / Authentication
+- Home Map
+- Announce Leaving Spot
+- Claim Parking Spot
+- Notifications
 
 ---
 
-### 🏠 3. Home / Dashboard
-```
----------------------------------
-| [Header: "F1 Predictions"]    |
----------------------------------
-| Upcoming Race: GP of Monza    |
-| Date: 14 July 2026            |
-| [ Make Prediction → ]         |
----------------------------------
-| [View Leaderboard] [My History] |
----------------------------------
-| Bottom Tabs:                  |
-| Home | Schedule | History | Profile |
----------------------------------
-```
-
----
-
-### 📅 4. Schedule Screen
-```
----------------------------------
-| ← Back | Schedule             |
----------------------------------
-| [ Race Card 1 ]               |
-| GP of Bahrain — 03 Mar 2026   |
-| Status: Upcoming              |
-| [ View Details → ]            |
----------------------------------
-| [ Race Card 2 ]               |
-| GP of Australia — 17 Mar 2026 |
-| Status: Closed                |
----------------------------------
-```
-
----
-
-### 🏎️ 5. Race Details & Prediction
-```
----------------------------------
-| ← Back | GP of Monza          |
----------------------------------
-| Circuit: Monza, Italy         |
-| Date: 14 July 2026            |
-| Status: Prediction Open       |
----------------------------------
-| 🧠 Your Prediction:            |
-| 1st Place: [Dropdown]         |
-| 2nd Place: [Dropdown]         |
-| 3rd Place: [Dropdown]         |
-| [ Submit Prediction ]         |
----------------------------------
-| (If closed:)                  |
-| Your Prediction: VER / HAM / NOR |
-| Actual Results: VER / LEC / RUS |
----------------------------------
-```
-
----
-
-### 🕒 6. Prediction History
-```
----------------------------------
-| ← Back | Prediction History   |
----------------------------------
-| [ Race Card ]                 |
-| GP of Bahrain                 |
-| Your: VER / PER / HAM         |
-| Actual: VER / LEC / PER       |
-| Points: +10                   |
----------------------------------
-| [ Race Card ]                 |
-| GP of Australia               |
-| Your: HAM / NOR / LEC         |
-| Actual: VER / PER / RUS       |
-| Points: +5                    |
----------------------------------
-```
-
----
-
-### 🏆 7. Leaderboard
-```
----------------------------------
-| ← Back | Leaderboard          |
----------------------------------
-| 1. UserA — 150 pts 🥇          |
-| 2. UserB — 140 pts 🥈          |
-| 3. UserC — 135 pts 🥉          |
-| ...                           |
-| 12. You — 98 pts ⭐             |
----------------------------------
-```
-
----
-
-### 👤 8. Profile / Settings
-```
----------------------------------
-| ← Back | Profile              |
----------------------------------
-| Logged in as: user@domain.com |
-| Total Points: 98              |
----------------------------------
-| [ Edit Profile ]              |
-| [ About App ]                 |
-| [ Sign Out ]                  |
----------------------------------
-| (Admin Options)               |
-| [ Manage Races ]              |
-| [ Enable Predictions ]        |
----------------------------------
-```
-
----
-
-## 🧠 Design Philosophy
-
-- Clean, **minimalistic UI** with race branding colors (red, black, and white).
-- **Tab-based navigation** for fast access between major sections.
-- Designed for **one-hand use** — key buttons within thumb reach.
-- **Accessible and responsive**, supporting both light/dark modes.
-
----
-
-## 🧰 Tech Stack
+## 🧰 Tech Stack (Planned)
 
 | Layer | Technology |
-|--------|-------------|
-| Framework | React Native (Expo) |
-| Backend | Firebase |
-| Navigation | React Navigation |
-| UI Components | NativeBase / React Native Paper |
-| Auth | Firebase Auth |
-| Database | Firestore |
-| Notifications | Expo Notifications |
-| Deployment | Expo EAS |
+|-------|-------------|
+| Frontend | React Native / Flutter |
+| Backend | Node.js / Express |
+| Database | Firebase / MongoDB |
+| Maps | Google Maps API |
+| Authentication | Firebase Auth / OAuth2 |
+| Notifications | Firebase Cloud Messaging |
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Future Enhancements
 
-- Offline mode with local cache
-- Push notifications before race deadlines
-- Share your predictions with friends
-- Enhanced admin dashboard
-- Integration with official F1 API for live results
-
----
-
-### 📸 Wireframe Reference
-
-The wireframe below visually represents the mobile app layout:
-
-![Wireframe Overview](A_wireframe_design_of_a_mobile_application_titled_.png)
+- User rating system for reliability.
+- In-app chat between spot sharers and claimers.
+- Dynamic filters (parking type, duration, cost).
+- AI-based suggestion for optimal parking zones.
 
 ---
 
-**Made with ❤️ for Formula 1 fans.**
+
+## 📬 Contact
+
+**Author:** [Vlad Mihut]
+**Email:** [vlad.mihut@icloud.com]  
+**GitHub:** [https://github.com/your-username](https://github.com/Mihutxxl)
+
+---
+
+_“Share a spot. Save a day.”_  
+✨ **ParkShare** — making parking smart and collaborative.
