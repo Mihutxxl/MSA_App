@@ -77,7 +77,7 @@ The wireframe illustrates the primary navigation between core screens:
 |-------|-------------|
 | Frontend | React Native / Flutter |
 | Backend | Node.js / Express |
-| Database | Firebase / MongoDB |
+| Database | PostgreSQL |
 | Maps | Google Maps API |
 | Authentication | Firebase Auth / OAuth2 |
 | Notifications | Firebase Cloud Messaging |
@@ -98,7 +98,7 @@ The wireframe illustrates the primary navigation between core screens:
 
 **Author:** [Vlad Mihut]
 **Email:** [vlad.mihut@icloud.com]  
-**GitHub:** [https://github.com/your-username](https://github.com/Mihutxxl)
+**GitHub:** [https://github.com/Mihutxxl](https://github.com/Mihutxxl)
 
 ---
 
