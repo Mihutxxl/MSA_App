@@ -60,7 +60,7 @@ Welcome → Sign Up / Log In → Home (Map)
 
 ## 🗺️ Wireframe Preview
 
-![ParkShare Wireframe](A_wireframe_of_a_mobile_application_named_"ParkSha.png)
+![ParkShare Wireframe](A_wireframe_of_a_mobile_application_named_''ParkSha.png)
 
 The wireframe illustrates the primary navigation between core screens:
 - Welcome / Authentication
