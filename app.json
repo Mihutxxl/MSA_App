@@ -13,12 +13,21 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyDiS0JTT_RpV49iPSWch8iCQfZzS6m-k5o"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.yourcompany.msaapp",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDiS0JTT_RpV49iPSWch8iCQfZzS6m-k5o"
+        }
       },
       "edgeToEdgeEnabled": true
     },
